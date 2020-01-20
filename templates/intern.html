@@ -1,19 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+
     <div class="card">
-        <h5 class="card-header">Featured</h5>
-        <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-</body>
-</html>
+            <h5 class="card-header">{{ name }}</h5>
+            <div class="card-body">
+              <h5 class="card-title"><i class="fas fa-user-graduate mr-2"></i>{{ role }}</h5>
+              <ul>
+                  <li class="list-group-item">ID: {{ id }}</li>
+                  <li class="list-group-item">Email: <a href="mailto:{{ email }}">{{ email }}</a></li class="list-group-item">
+                  <li class="list-group-item">School: <a href="https://github.com/{{ school }}" target="_blank" rel="noopener noreferrer"></a>/li>
+              </ul>
+            </div>
+    </div>

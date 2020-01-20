@@ -9,7 +9,7 @@ const outputPath = path.resolve(__dirname, "output", "team.html");
 
 const render = require("./lib/htmlRenderer");
 
-const teamMeambers = [];
+const teamMembers = [];
 
 const idArray = [];
 
@@ -20,8 +20,8 @@ function appMenu() {
         inquirer.prompt([
             {
             type: "input",
-            name: "managerName",
             Message: "what is your manager's name?",
+            name: "managerName",
             validate: answer => {
                 if (answer !== ""){
                     return true;
@@ -31,8 +31,8 @@ function appMenu() {
         },
         {
             type: "input",
-            name: "managerId",
             Message: "what is your manager's id number?",
+            name: "managerId",
             validate: answer => {
                 const pass = answer.match(
                     /^[1-9]\d*$/
@@ -45,8 +45,8 @@ function appMenu() {
         },
         {
             type: "input",
-            name: "managerEmail",
             Message: "what is your manager's email?",
+            name: "managerEmail",
             validate: answer => {
                 const pass = answer.match(
                     /\S+@\S+\.\S+/
@@ -57,8 +57,8 @@ function appMenu() {
                 return "Please enter a valid email address.";
             },
             type: "input",
-            name: "managerOfficeNumber",
             Message: "what is your manager's office number?",
+            name: "managerOfficeNumber",
             validate: answer => {
                 const pass = answer.match(
                     /^[1-9]\d*$/
@@ -70,8 +70,8 @@ function appMenu() {
             }
         }
         ]).then(answers => {
-            const manager = new Manager(answer.managerName, answers.managerId, answers.managerOfficeNumber);
-            teamMeambers.join.push(manager);
+            const manager = new Manager(answers.managerName, answers.managerId, answers.managerOfficeNumber);
+            teamMembers.push(manager);
             idArray.push(answers.managerId);
             createTeam();
         })
@@ -81,12 +81,12 @@ function appMenu() {
         inquirer.prompt([
             {
                 type: "list",
-                name: "memberChoice",
                 Message: "Which type of team mamber would you like to add?",
+                name: "memberChoice",
                 choices: [
                     "Engineer",
                     "Intern",
-                    "I don't esnt to add anymore team members"
+                    "I don't want to add anymore team members"
                 ]
             }
         ]).then(userChoice => {
@@ -106,8 +106,8 @@ function appMenu() {
         inquirer.prompt([
             {
                 type: "input",
-                name: "engineerName",
                 Message: "what is your engineer's name?",
+                name: "engineerName",
                 validate: answer => {
                     if (answer !== "") {
                         return true;
@@ -117,8 +117,8 @@ function appMenu() {
             },
             {
                 type: "input",
-                name: "engineerId",
                 Message: "what is your engineer's id number?",
+                name: "engineerId",
                 validate: answer => {
                     const pass = answer.match(
                         /^[1-9]\d*$/
@@ -136,8 +136,8 @@ function appMenu() {
             },
             {
                 type: "input",
-                name: "engineerEmail",
                 Message: "what is your engineer's email?",
+                name: "engineerEmail",
                 validate: answer => {
                     const pass = answer.match(
                         /\S+@\S+\.\S+/
@@ -150,8 +150,8 @@ function appMenu() {
             },
             {
                 type: "input",
-                name: "engineerGithub",
                 Message: "what is your engineer's Github username?",
+                name: "engineerGithub",
                 validate: answer => {
                     if (answer !== "") {
                         return true;
@@ -161,7 +161,7 @@ function appMenu() {
             }
         ]).then(answers => {
             const engineer = new Engineer (answers.engineerName, answers.engineerId, answers.engineerEmail, answers.engineerGithub);
-            teamMeambers.push(engineer);
+            teamMembers.push(engineer);
             idArray.push(answers.engineerId);
             createTeam();
         });
@@ -171,8 +171,8 @@ function appMenu() {
         inquirer.prompt([
             {
                 type: "input",
-                name: "internName",
                 Message: "what is your intern's name?",
+                name: "internName",
                 validate: answer => {
                     if (answer !== "") {
                         return true;
@@ -182,8 +182,8 @@ function appMenu() {
             },
             {
                 type: "input",
-                name: "internId",
                 Message: "what is your intern's id number?",
+                name: "internId",
                 validate: answer => {
                     const pass = answer.match(
                         /^[1-9]\d*$/
@@ -200,8 +200,8 @@ function appMenu() {
             },
             {
             type: "input",
-            name: "internEmail",
             Message: "what is your intern's email address?",
+            name: "internEmail",
             validate: answer => {
                 const pass = answer.match(
                     /\S+@\S+\.S+/
@@ -215,8 +215,8 @@ function appMenu() {
         },
         {
             type: "input",
-            name: "internSchool",
             Message: "what is your intern's school?",
+            name: "internSchool",
             validate: answer => {
                 if (answer !== "") {
                     return true;
