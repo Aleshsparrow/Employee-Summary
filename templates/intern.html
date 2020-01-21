@@ -1,12 +1,12 @@
 
-    <div class="card">
-            <h5 class="card-header">{{ name }}</h5>
-            <div class="card-body">
-              <h5 class="card-title"><i class="fas fa-user-graduate mr-2"></i>{{ role }}</h5>
+    <div style="width: 32%; margin: 2px; box-sizing: border-box; float: left;  color: white;" class="card">
+            <h5 style="background-color: blue;" class="card-header">{{ name }}</h5>
+            <div class="">
+              <h5 class="card-title"><i class="fa fa-user-graduate mr-2"></i>{{ role }}</h5>
               <ul>
                   <li class="list-group-item">ID: {{ id }}</li>
                   <li class="list-group-item">Email: <a href="mailto:{{ email }}">{{ email }}</a></li class="list-group-item">
-                  <li class="list-group-item">School: <a href="https://github.com/{{ school }}" target="_blank" rel="noopener noreferrer"></a>/li>
+                  <li class="list-group-item">School: {{ school }}<a href="" target="_blank" rel="noopener noreferrer"></a>/li>
               </ul>
             </div>
     </div>

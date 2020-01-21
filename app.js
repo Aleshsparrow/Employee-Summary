@@ -93,7 +93,7 @@ function appMenu() {
             switch(userChoice.memberChoice) {
                 case "Engineer":
                     addEngineer();
-                case "intern":
+                case "Intern":
                     addIntern();
                     break;
                 default:
